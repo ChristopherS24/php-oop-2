@@ -37,6 +37,18 @@
 
     }
 
+    class Petbed extends Product {
+
+        public $tagliaCuccia;
+
+        function __construct(string $title, float $price, string $img, Category|null $category = null, $tagliaCuccia = null) {
+            parent::__construct($title, $price, $img, $category);
+            $this->tagliaCuccia = $tagliaCuccia;
+        }
+
+
+    };
+
     $cani = new Category('Cani', '🐕');
     $gatti = new Category('Gatti', '🐈');
 
@@ -68,11 +80,20 @@
 
     $cucciaCane = new Product(
         'cuccia per cani',
-        19.99,
+        24.99,
         'img',
         $cani
     );
     var_dump($cucciaCane);
+
+    $tagliaCuccia = new PetBed(
+        'taglia della cuccia',
+        39.99,
+        'img',
+        $cani,
+        'taglia XL'
+    );
+    var_dump($tagliaCuccia);
 
 //Gatti
     $croccantiniGatti = new Product(
@@ -109,10 +130,6 @@
         $gatti
     );
     var_dump($cucciaGatto);
-
-
-
-
 
 
 
