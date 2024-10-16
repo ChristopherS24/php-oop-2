@@ -40,17 +40,81 @@
     $cani = new Category('Cani', '🐕');
     $gatti = new Category('Gatti', '🐈');
 
+    $croccantiniCani = new Product(
+        'croccantini per cani',
+        59.99,
+        'https://www.magazzinitotopiccinni.it/media/catalog/product/cache/1/thumbnail/600x/17f82f742ffe127f42dca9de82fb58b1/r/o/royal-canin-15kg-cani.jpg',
+        $cani
+    );
+    var_dump($croccantiniCani);
 
-    //$products = [
-        //$croccantiniCane,
-        //$giocattoliCane,
-        //$giocoCane,
-        //$cucciaCane,
-        //$croccantiniGatto,
-        //$giocattoliGatto,
-        //$giocoGatto,
-        //$cucciaGatto
-    //];
+    $giocattoloCani = new Product(
+        'giocattolo per cani',
+        7.99,
+        'img',
+        $cani
+    );
+    var_dump($giocattoloCani);
+
+    
+    $prodottoCane = new Product(
+        'prodotto per cani',
+        10.99,
+        'img',
+        $cani
+    );
+    var_dump($prodottoCane);
+
+
+    $cucciaCane = new Product(
+        'cuccia per cani',
+        19.99,
+        'img',
+        $cani
+    );
+    var_dump($cucciaCane);
+
+//Gatti
+    $croccantiniGatti = new Product(
+        'croccantini per gatti',
+        29.99,
+        'https://arcaplanet.vtexassets.com/arquivos/ids/286259/immagini_1200x120027.jpg?v=638205225704630000',
+        $gatti
+    );
+    var_dump($croccantiniGatti);
+
+    
+    $giocattoloGatti = new Product(
+        'giocattolo per gatti',
+        4.99,
+        'img',
+        $gatti
+    );
+    var_dump($giocattoloGatti);
+
+    
+    $prodottoGatto = new Product(
+        'prodotto per Gatto',
+        10.99,
+        'img',
+        $gatti
+    );
+    var_dump($prodottoGatto);
+
+    
+    $cucciaGatto = new Product(
+        'cuccia per gatto',
+        19.99,
+        'img',
+        $gatti
+    );
+    var_dump($cucciaGatto);
+
+
+
+
+
+
 
 ?>
 
