@@ -16,9 +16,9 @@
     class Product {
 
         public $title;
-        private $price;
+        public $price;
         public $img;
-        private $category;
+        public $category;
 
         function __construct(string $title, float $price, string $img, Category|null $category = null) {
             $this->title = $title;
@@ -131,6 +131,17 @@
     );
     var_dump($cucciaGatto);
 
+    $products = [
+        $croccantiniCani,
+        $giocattoloCani,
+        $prodottoCane,
+        $cucciaCane,
+        $croccantiniGatti,
+        $giocattoloGatti,
+        $prodottoGatto,
+        $cucciaGatto
+    ];
+
 
 
 ?>
@@ -146,6 +157,45 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
     <body>
+
+    <header>
+        <div>
+            <h1>
+                php-oop-2 Shop
+            </h1>
+        </div>
+    </header>
+    
+    <main>
+
+    <div class="container">
+        <div class="row g-3">
+            <?php
+                foreach ($products as $product) {
+            ?>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <img src="<?php echo $product->img; ?>" class="card-img-top" alt="<?php echo $product->title; ?>">
+                    <div class="card-body">
+                        <h3>
+                            <?php echo $product->title; ?>
+                        </h3>
+                        <h5>
+                            €<?php echo $product->price; ?>
+                            
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+            <?php
+                }
+            ?>
+
+        </div>
+    </div>
+
+    </main>
         
 
     </body>
