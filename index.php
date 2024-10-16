@@ -2,8 +2,8 @@
     
     class Category {
 
-        private $name;
-        private $icon;
+        public $name;
+        public $icon;
 
         function __construct(string $name, string $icon) {
             $this->name = $name;
@@ -18,7 +18,7 @@
         public $title;
         public $price;
         public $img;
-        public $category;
+        protected $category;
 
         function __construct(string $title, float $price, string $img, Category|null $category = null) {
             $this->title = $title;
@@ -63,7 +63,7 @@
     $giocattoloCani = new Product(
         'giocattolo per cani',
         7.99,
-        'img',
+        'https://arcaplanet.vtexassets.com/arquivos/ids/260658/lovedi-gioco-cane-palla-con-punte-tpr-verde.jpg?v=637617645268130000',
         $cani
     );
     var_dump($giocattoloCani);
@@ -71,8 +71,8 @@
     
     $prodottoCane = new Product(
         'prodotto per cani',
-        10.99,
-        'img',
+        9.99,
+        'https://arcaplanet.vtexassets.com/arquivos/ids/273231/perfect-shampoo-igienizzante-200ml.jpg?v=637922686092300000',
         $cani
     );
     var_dump($prodottoCane);
@@ -81,7 +81,7 @@
     $cucciaCane = new Product(
         'cuccia per cani',
         24.99,
-        'img',
+        'https://img.kwcdn.com/product/fancy/543cff2a-4e48-4bad-bc0b-c2538eb4ad3a.jpg?imageView2/2/w/650/q/50/format/webp',
         $cani
     );
     var_dump($cucciaCane);
@@ -108,7 +108,7 @@
     $giocattoloGatti = new Product(
         'giocattolo per gatti',
         4.99,
-        'img',
+        'https://arcaplanet.vtexassets.com/arquivos/ids/291827/Kong-Cat-Xmas-Wrangler-Cactus-10170328.jpg?v=638355674306070000',
         $gatti
     );
     var_dump($giocattoloGatti);
@@ -116,8 +116,8 @@
     
     $prodottoGatto = new Product(
         'prodotto per Gatto',
-        10.99,
-        'img',
+        8.99,
+        'https://arcaplanet.vtexassets.com/arquivos/ids/283685/a277b71142c0147396b01375c7d0bcbfce9ddd7a_419b5499ba6d59a6c0d4d591f1a3e102d99a6a5f--1-.jpg?v=638168013942000000',
         $gatti
     );
     var_dump($prodottoGatto);
@@ -125,8 +125,8 @@
     
     $cucciaGatto = new Product(
         'cuccia per gatto',
-        19.99,
-        'img',
+        29.99,
+        'https://arcaplanet.vtexassets.com/arquivos/ids/265864/trixie-cuccia-igloo-tipi-per-gatto.jpg?v=637743794566200000',
         $gatti
     );
     var_dump($cucciaGatto);
@@ -159,11 +159,12 @@
     <body>
 
     <header>
-        <div>
+        <div class="text-center">
             <h1>
                 php-oop-2 Shop
             </h1>
         </div>
+        <hr>
     </header>
     
     <main>
@@ -182,8 +183,11 @@
                         </h3>
                         <h5>
                             €<?php echo $product->price; ?>
-                            
                         </h5>
+                        <h6>
+                            <?php echo $product->getCategory()->name; ?>
+                            <?php echo $product->getCategory()->icon; ?>
+                        </h6>
                     </div>
                 </div>
 
